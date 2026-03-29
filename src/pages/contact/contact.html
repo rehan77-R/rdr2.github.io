@@ -3,144 +3,99 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact - RDR2 PC Parts</title>
+  <title>Contact RDR2</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Rajdhani', sans-serif; }
-    .logo-font { font-family: 'Orbitron', monospace; }
-    .hero-bg { background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); }
-    .glow { text-shadow: 0 0 20px #6366f1; }
-    .nav-glass { background: rgba(15,12,41,0.95); backdrop-filter: blur(10px); }
-    .input-style { background: rgba(255,255,255,0.05); border: 1px solid rgba(99,102,241,0.3); color: white; transition: border-color 0.3s; }
-    .input-style:focus { outline: none; border-color: #6366f1; box-shadow: 0 0 0 3px rgba(99,102,241,0.2); }
-    .input-style::placeholder { color: rgba(255,255,255,0.3); }
-    .card-bg { background: linear-gradient(145deg, #1e1b4b, #0f0c29); border: 1px solid rgba(99,102,241,0.3); }
-    .btn-glow:hover { box-shadow: 0 0 25px rgba(99,102,241,0.6); }
-  </style>
 </head>
-<body class="bg-gray-950 text-white">
 
-  <!-- Navbar -->
-  <!-- contact.html is inside: src/pages/contact/  => 3 levels up to reach index.html -->
-  <nav class="nav-glass border-b border-indigo-900 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="flex justify-between items-center h-16">
-        <a href="../../../index.html" class="logo-font text-xl font-bold text-indigo-400 glow tracking-widest">RDR2</a>
-        <div class="flex space-x-6 items-center">
-          <a href="../../../index.html"          class="text-gray-400 hover:text-white transition font-semibold">🏠 Home</a>
-          <a href="../about/about.html"          class="text-gray-400 hover:text-white transition font-semibold">About</a>
-          <a href="../contact/contact.html"      class="text-indigo-300 font-semibold">Contact</a>
-          <a href="../sign in/signin.html"       class="px-4 py-2 border border-indigo-500 text-indigo-300 rounded-lg hover:bg-indigo-900 transition font-semibold">Sign In</a>
-          <a href="../sign up/signup.html"       class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-500 transition font-semibold">Sign Up</a>
+<body class="bg-blue-200 font-sans">
+
+  <!-- Navigation -->
+  <nav class="bg-blue-100 shadow-md sticky top-0">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between items-center h-15">
+
+        <div class="text-2xl font-bold text-blue-800">
+          RDR2
         </div>
+
+        <div class="space-x-6">
+          <a href="../../../index.html" class="text-gray-700 hover:text-blue-600">Home</a>
+          <a href="../../pages/about/about.html" class="text-gray-700 hover:text-blue-600">About</a>
+          <a href="./contact.html" class="text-gray-700 hover:text-blue-700">Contact</a>
+        </div>
+
       </div>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero-bg py-16 text-center">
-    <h1 class="logo-font text-4xl font-black text-indigo-400 glow mb-2">Contact Us</h1>
-    <p class="text-indigo-200 text-lg">Have a question? We'd love to hear from you!</p>
-  </section>
-
   <!-- Contact Section -->
-  <section class="py-16 bg-gray-950">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="grid md:grid-cols-2 gap-10">
+  <section class="py-15">
+    <div class="max-w-3xl mx-auto bg-blue-100 px-6 shadow-lg rounded-xl">
 
-        <!-- Info Cards -->
-        <div class="space-y-6">
-          <h2 class="logo-font text-2xl font-bold text-white mb-4">Get in Touch</h2>
+      <h1 class="text-3xl font-bold text-center mb-6 text-blue-600">
+        Contact Us
+      </h1>
 
-          <div class="card-bg p-5 rounded-xl flex items-start gap-4">
-            <div class="text-3xl">📍</div>
-            <div>
-              <h3 class="font-bold text-indigo-300 text-lg">Address</h3>
-              <p class="text-gray-400">Hall Road, Lahore, Pakistan</p>
-            </div>
-          </div>
+      <p class="text-center text-gray-600 mb-8">
+        Fill the form below and we will get back to you.
+      </p>
 
-          <div class="card-bg p-5 rounded-xl flex items-start gap-4">
-            <div class="text-3xl">📞</div>
-            <div>
-              <h3 class="font-bold text-indigo-300 text-lg">Phone</h3>
-              <p class="text-gray-400">+92 300 1234567</p>
-            </div>
-          </div>
+      <!-- Contact Form -->
+      <form class="space-y-4">
 
-          <div class="card-bg p-5 rounded-xl flex items-start gap-4">
-            <div class="text-3xl">📧</div>
-            <div>
-              <h3 class="font-bold text-indigo-300 text-lg">Email</h3>
-              <p class="text-gray-400">info@rdr2pcparts.pk</p>
-            </div>
-          </div>
+        <input 
+        type="text"
+        name="name"
+        placeholder="Enter Your Name"
+        class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        required
+        />
 
-          <div class="card-bg p-5 rounded-xl flex items-start gap-4">
-            <div class="text-3xl">🕐</div>
-            <div>
-              <h3 class="font-bold text-indigo-300 text-lg">Hours</h3>
-              <p class="text-gray-400">Mon - Sat: 10am - 8pm</p>
-            </div>
-          </div>
-        </div>
+        <input 
+        type="email"
+        name="email"
+        placeholder="Enter Your Email"
+        class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        required
+        />
 
-        <!-- Form -->
-        <div class="card-bg p-8 rounded-2xl shadow-xl">
-          <h2 class="logo-font text-xl font-bold text-white mb-6">Send a Message</h2>
+        <input 
+        type="password"
+        name="password"
+        placeholder="Enter Your Password"
+        minlength="8"
+        maxlength="15"
+        class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
 
-          <!-- Success -->
-          <div id="successMsg" class="hidden bg-green-900 border border-green-500 text-green-300 rounded-lg p-4 mb-4 text-center font-semibold">
-            ✅ Message sent! We'll get back to you soon.
-          </div>
+        <input 
+        type="number"
+        name="age"
+        placeholder="Enter Your Age"
+        class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
 
-          <form id="contactForm" onsubmit="handleContact(event)" class="space-y-4">
+        <textarea
+        placeholder="Enter Your Message"
+        rows="4"
+        class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        ></textarea>
 
-            <div>
-              <label class="block text-sm font-semibold text-indigo-300 mb-1">Your Name</label>
-              <input id="cName" type="text" placeholder="Ali Khan" class="input-style w-full rounded-lg px-4 py-2.5 text-sm" required/>
-            </div>
+        <button
+        type="submit"
+        class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-700 transition">
+        Send Message
+        </button>
 
-            <div>
-              <label class="block text-sm font-semibold text-indigo-300 mb-1">Email Address</label>
-              <input id="cEmail" type="email" placeholder="ali@example.com" class="input-style w-full rounded-lg px-4 py-2.5 text-sm" required/>
-            </div>
+      </form>
 
-            <div>
-              <label class="block text-sm font-semibold text-indigo-300 mb-1">Subject</label>
-              <input id="cSubject" type="text" placeholder="e.g. GPU availability query" class="input-style w-full rounded-lg px-4 py-2.5 text-sm" required/>
-            </div>
-
-            <div>
-              <label class="block text-sm font-semibold text-indigo-300 mb-1">Message</label>
-              <textarea id="cMessage" placeholder="Write your message here..." rows="4" class="input-style w-full rounded-lg px-4 py-2.5 text-sm resize-none" required></textarea>
-            </div>
-
-            <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 rounded-lg transition btn-glow logo-font tracking-wider">
-              SEND MESSAGE →
-            </button>
-          </form>
-        </div>
-
-      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 border-t border-gray-800 text-gray-400 py-8 text-center">
-    <div class="logo-font text-2xl text-indigo-400 mb-2">RDR2</div>
-    <p class="text-sm">© 2026 RDR2 PC Parts Store. All rights reserved.</p>
+  <footer class="bg-gray-800 text-white text-center py-4">
+    <p>© 2026 MyWebsite. All rights reserved.</p>
   </footer>
 
-<script>
-function handleContact(e) {
-  e.preventDefault();
-  const successMsg = document.getElementById('successMsg');
-  successMsg.classList.remove('hidden');
-  document.getElementById('contactForm').reset();
-  setTimeout(() => { successMsg.classList.add('hidden'); }, 4000);
-}
-</script>
 </body>
 </html>
