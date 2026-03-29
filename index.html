@@ -3,130 +3,164 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>RDR2</title>
+<title>RDR2 - PC Parts Store</title>
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Rajdhani', sans-serif; }
+  .logo-font { font-family: 'Orbitron', monospace; }
+  .hero-bg { background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); }
+  .glow { text-shadow: 0 0 20px #6366f1, 0 0 40px #6366f1; }
+  .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(99,102,241,0.3); }
+  .nav-glass { background: rgba(15,12,41,0.95); backdrop-filter: blur(10px); }
+  .btn-glow:hover { box-shadow: 0 0 20px rgba(99,102,241,0.6); }
+  .product-card { background: linear-gradient(145deg, #1e1b4b, #312e81); border: 1px solid rgba(99,102,241,0.3); }
+  .product-card:hover { border-color: rgba(99,102,241,0.8); }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+  .float-anim { animation: float 3s ease-in-out infinite; }
+  .stripe { background: repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(99,102,241,0.05) 10px,rgba(99,102,241,0.05) 20px); }
+</style>
 </head>
-
-<body class="bg-blue-200 font-sans">
+<body class="bg-gray-950 text-white">
 
 <!-- Navbar -->
-<nav class="bg-blue-100 shadow-md sticky top-0">
-  <div class="max-w-7xl mx-auto px-3">
-    <div class="flex justify-between items-center h-15">
-
-      <!-- Logo -->
-      <div class="text-3xl font-bold text-blue-800">
+<nav class="nav-glass shadow-md sticky top-0 z-50 border-b border-indigo-900">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+      <div class="logo-font text-2xl font-bold text-indigo-400 glow tracking-widest">
         RDR2
+        <span class="text-xs text-indigo-300 font-normal block -mt-1" style="font-family:'Rajdhani',sans-serif">PC PARTS STORE</span>
       </div>
-
-      <!-- Links -->
       <div class="hidden md:flex space-x-6 items-center">
-        <a href="./index.html" class="text-gray-700 hover:text-blue-600">Home</a>
-        <a href="./src/pages/about/about.html" class="text-gray-700 hover:text-blue-600">About</a>
-        <a href="./src/pages/contact/contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
-        <a href="./src/pages/sign in/signin.html" class="px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50">Sign In</a>
-        <a href="./src/pages/sign up/signup.html"class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Sign Up</a>
+        <a href="./index.html"class="text-indigo-300 hover:text-white transition font-semibold">Home</a>
+        <a href="./src/pages/about/about.html"class="text-gray-400 hover:text-white transition font-semibold">About</a>
+        <a href="./src/pages/contact/contact.html"class="text-gray-400 hover:text-white transition font-semibold">Contact</a>
+        <a href="./src/pages/signin/signin.html"class="px-4 py-2 border border-indigo-500 text-indigo-300 rounded-lg hover:bg-indigo-900 transition font-semibold">Sign In</a>
+        <a href="./src/pages/signup/signup.html"class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-500 transition font-semibold">Sign Up</a>
       </div>
-
+      <button id="menuBtn" class="md:hidden text-indigo-300 text-2xl">☰</button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden pb-4 space-y-2">
+      <a href="./index.html"class="block text-indigo-300 py-2 font-semibold">🏠 Home</a>
+      <a href="./src/pages/about/about.html"class="block text-gray-400 py-2 font-semibold">About</a>
+      <a href="./src/pages/contact/contact.html"class="block text-gray-400 py-2 font-semibold">Contact</a>
+      <a href="./src/pages/sign in/signin.html"class="block text-indigo-300 py-2 font-semibold">Sign In</a>
+      <a href="./src/pages/sign up/signup.html"class="block text-white py-2 font-semibold">Sign Up</a>
     </div>
   </div>
 </nav>
 
-
-<!-- Hero Section -->
-<section class="bg-gradient-to-r from-blue-300 to-indigo-600 text-white py-24">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-
-    <h1 class="text-5xl font-bold mb-6">
-      Build Something Amazing
+<!-- Hero -->
+<section class="hero-bg text-white py-28 relative overflow-hidden">
+  <div class="stripe absolute inset-0"></div>
+  <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+    <div class="float-anim inline-block text-7xl mb-6">🖥️</div>
+    <h1 class="logo-font text-5xl md:text-6xl font-black mb-4">
+      BUILD YOUR <span class="text-indigo-400 glow">DREAM PC</span>
     </h1>
-
-    <p class="text-lg mb-8 opacity-90">
-      A modern landing page built with Tailwind CSS. Clean design, fast performance,
-      and responsive layout for every device.
+    <p class="text-lg mb-10 text-indigo-200 max-w-2xl mx-auto font-medium">
+      Premium PC parts at unbeatable prices. Processors, GPUs, RAM, Storage — everything you need.
     </p>
-
-    <div class="space-x-4">
-      <a href="./src/pages/auth/signup.html"
-      class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200">
-      Get Started
-      </a>
-
-      <a href="./src/pages/about/about.html"
-      class="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-blue-600">
-      Learn More
-      </a>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="./src/pages/sign up/signup.html" class="bg-indigo-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-indigo-500 transition btn-glow text-lg">🚀 Get Started</a>
+      <a href="./src/pages/about/about.html"    class="border border-indigo-400 text-indigo-300 px-8 py-3 rounded-lg hover:bg-indigo-900 transition font-bold text-lg">Learn More</a>
     </div>
-
   </div>
 </section>
 
-
-<!-- Features -->
-<section class="py-20">
+<!-- Featured Products -->
+<section class="py-20 bg-gray-950">
   <div class="max-w-6xl mx-auto px-6 text-center">
-
-    <h2 class="text-3xl font-bold mb-12 text-blue-900">
-      Our Features
-    </h2>
-
-    <div class="grid md:grid-cols-3 gap-10">
-
-      <div class="bg-blue-100 p-8 rounded-xl shadow hover:shadow-xl transition">
-        <div class="text-blue-700 text-4xl mb-4">⚡</div>
-        <h3 class="text-xl font-semibold mb-2">Fast</h3>
-        <p class="text-white-400">
-          Optimized for performance and smooth user experience.
-        </p>
+    <h2 class="logo-font text-3xl font-bold mb-3 text-indigo-400">Featured Products</h2>
+    <p class="text-gray-400 mb-12">Top picks for your next build</p>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="product-card p-6 rounded-xl card-hover">
+        <div class="text-5xl mb-4">⚙️</div>
+        <h3 class="logo-font text-lg font-bold mb-1 text-indigo-300">Intel Core i9-14900K</h3>
+        <p class="text-gray-400 text-sm mb-3">24 Cores | 5.8GHz Boost</p>
+        <div class="text-2xl font-bold text-white mb-4">Rs. 95,000</div>
+        <button class="w-full bg-indigo-600 hover:bg-indigo-500 text-white py-2 rounded-lg transition font-semibold">Add to Cart</button>
       </div>
-
-      <div class="bg-blue-100 p-8 rounded-xl shadow hover:shadow-xl transition">
-        <div class="text-blue-600 text-4xl mb-4">🎯</div>
-        <h3 class="text-xl font-semibold mb-2">Simple</h3>
-        <p class="text-gray-600">
-          Clean interface that is easy to navigate for everyone.
-        </p>
+      <div class="product-card p-6 rounded-xl card-hover">
+        <div class="text-5xl mb-4">🎮</div>
+        <h3 class="logo-font text-lg font-bold mb-1 text-indigo-300">RTX 4080 Super</h3>
+        <p class="text-gray-400 text-sm mb-3">16GB GDDR6X | DLSS 3.5</p>
+        <div class="text-2xl font-bold text-white mb-4">Rs. 1,85,000</div>
+        <button class="w-full bg-indigo-600 hover:bg-indigo-500 text-white py-2 rounded-lg transition font-semibold">Add to Cart</button>
       </div>
-
-      <div class="bg-blue-100 p-8 rounded-xl shadow hover:shadow-xl transition">
-        <div class="text-blue-600 text-4xl mb-4">📱</div>
-        <h3 class="text-xl font-semibold mb-2">Responsive</h3>
-        <p class="text-gray-600">
-          Works perfectly on mobile, tablet, and desktop.
-        </p>
+      <div class="product-card p-6 rounded-xl card-hover">
+        <div class="text-5xl mb-4">💾</div>
+        <h3 class="logo-font text-lg font-bold mb-1 text-indigo-300">Samsung 990 Pro 2TB</h3>
+        <p class="text-gray-400 text-sm mb-3">NVMe | 7,450 MB/s Read</p>
+        <div class="text-2xl font-bold text-white mb-4">Rs. 28,000</div>
+        <button class="w-full bg-indigo-600 hover:bg-indigo-500 text-white py-2 rounded-lg transition font-semibold">Add to Cart</button>
       </div>
-
     </div>
-
   </div>
 </section>
 
+<!-- Categories -->
+<section class="py-20 bg-gray-900">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="logo-font text-3xl font-bold mb-3 text-white">Shop by Category</h2>
+    <p class="text-gray-400 mb-12">Find exactly what you need</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="bg-gray-800 border border-gray-700 p-6 rounded-xl card-hover hover:border-indigo-500"><div class="text-4xl mb-3">⚙️</div><h3 class="font-bold text-indigo-300">Processors</h3><p class="text-gray-500 text-sm">Intel & AMD</p></div>
+      <div class="bg-gray-800 border border-gray-700 p-6 rounded-xl card-hover hover:border-indigo-500"><div class="text-4xl mb-3">🎮</div><h3 class="font-bold text-indigo-300">Graphics Cards</h3><p class="text-gray-500 text-sm">NVIDIA & AMD</p></div>
+      <div class="bg-gray-800 border border-gray-700 p-6 rounded-xl card-hover hover:border-indigo-500"><div class="text-4xl mb-3">🧠</div><h3 class="font-bold text-indigo-300">RAM</h3><p class="text-gray-500 text-sm">DDR4 & DDR5</p></div>
+      <div class="bg-gray-800 border border-gray-700 p-6 rounded-xl card-hover hover:border-indigo-500"><div class="text-4xl mb-3">💾</div><h3 class="font-bold text-indigo-300">Storage</h3><p class="text-gray-500 text-sm">SSD & NVMe</p></div>
+      <div class="bg-gray-800 border border-gray-700 p-6 rounded-xl card-hover hover:border-indigo-500"><div class="text-4xl mb-3">🔌</div><h3 class="font-bold text-indigo-300">Motherboards</h3><p class="text-gray-500 text-sm">ATX & mATX</p></div>
+      <div class="bg-gray-800 border border-gray-700 p-6 rounded-xl card-hover hover:border-indigo-500"><div class="text-4xl mb-3">⚡</div><h3 class="font-bold text-indigo-300">PSU</h3><p class="text-gray-500 text-sm">500W - 1200W</p></div>
+      <div class="bg-gray-800 border border-gray-700 p-6 rounded-xl card-hover hover:border-indigo-500"><div class="text-4xl mb-3">🌡️</div><h3 class="font-bold text-indigo-300">Cooling</h3><p class="text-gray-500 text-sm">Air & Liquid</p></div>
+      <div class="bg-gray-800 border border-gray-700 p-6 rounded-xl card-hover hover:border-indigo-500"><div class="text-4xl mb-3">🖥️</div><h3 class="font-bold text-indigo-300">Cases</h3><p class="text-gray-500 text-sm">Mid & Full Tower</p></div>
+    </div>
+  </div>
+</section>
 
-<!-- Call To Action -->
-<section class="bg-blue-600 text-white py-17">
+<!-- Why Us -->
+<section class="py-20 bg-gray-950">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="logo-font text-3xl font-bold mb-12 text-indigo-400">Why Choose RDR2?</h2>
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="bg-gray-900 border border-indigo-900 p-8 rounded-xl card-hover">
+        <div class="text-indigo-400 text-4xl mb-4">⚡</div>
+        <h3 class="logo-font text-xl font-semibold mb-2 text-white">Fast Delivery</h3>
+        <p class="text-gray-400">Same day dispatch across Pakistan.</p>
+      </div>
+      <div class="bg-gray-900 border border-indigo-900 p-8 rounded-xl card-hover">
+        <div class="text-indigo-400 text-4xl mb-4">✅</div>
+        <h3 class="logo-font text-xl font-semibold mb-2 text-white">100% Genuine</h3>
+        <p class="text-gray-400">All products original with full warranty.</p>
+      </div>
+      <div class="bg-gray-900 border border-indigo-900 p-8 rounded-xl card-hover">
+        <div class="text-indigo-400 text-4xl mb-4">💬</div>
+        <h3 class="logo-font text-xl font-semibold mb-2 text-white">Expert Support</h3>
+        <p class="text-gray-400">PC experts help you pick right components.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-gradient-to-r from-indigo-900 to-purple-900 text-white py-20">
   <div class="max-w-4xl mx-auto text-center px-6">
-
-    <h2 class="text-3xl font-bold mb-4">
-      Ready to Get Started?
-    </h2>
-
-    <p class="mb-6 opacity-90">
-      Create an account today and start exploring our platform.
-    </p>
-
-    <a href="./src/pages/auth/signup.html"
-    class="bg-white text-blue-800 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100">
-    Create Account
-    </a>
-
+    <h2 class="logo-font text-4xl font-bold mb-4">Ready to Build?</h2>
+    <p class="mb-8 text-indigo-200 text-lg">Create an account and start shopping the best PC parts in Pakistan.</p>
+    <a href="./src/pages/sign up/signup.html" class="bg-white text-indigo-800 px-10 py-4 rounded-lg font-bold hover:bg-indigo-100 transition text-lg logo-font">Create Account →</a>
   </div>
 </section>
-
 
 <!-- Footer -->
-<footer class="bg-gray-900 text-gray-300 py-6 text-center">
-  <p>© 2026 Website. All rights reserved.</p>
+<footer class="bg-gray-900 border-t border-gray-800 text-gray-400 py-8 text-center">
+  <div class="logo-font text-2xl text-indigo-400 mb-2">RDR2</div>
+  <p class="text-sm">© 2026 RDR2 PC Parts Store. All rights reserved.</p>
 </footer>
 
+<script>
+  document.getElementById('menuBtn').addEventListener('click', function() {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  });
+</script>
 </body>
 </html>
